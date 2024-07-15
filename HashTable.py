@@ -72,18 +72,15 @@ class HashTable:
     def task(self, old_option):
         tab = old_option.split(" ")
         option = tab[0]
-        if len(tab) >= 1 and len(tab) < 2:
-            key = tab[1]
-        else:
-            key = None
+        key = tab[1] if len(tab) > 1 else None
 
-        if option == "add" and key!=None:
+        if option == "add" and key is not None:
             self.add(key)
-        elif option == "remove" and key!=None:
+        elif option == "remove" and key is not None:
             self.remove(key)
         elif option == "size":
             print(self.size())
-        elif option == "contains" and key!=None:
+        elif option == "contains" and key is not None:
             print(self.contains(key))
         elif option == "display":
             self.display()
